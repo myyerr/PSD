@@ -1,11 +1,35 @@
-# Welcome to your Jupyter Book
+# Dokumentasi Proyek Sains Data
 
-This is a large sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+**Program Studi Teknik Informatika – IF5D**  
+Mata Kuliah: *Proyek Sains Data*  
 
-Check out the content pages bundled with this sample book to see more.
+---
+
+## Identitas Mahasiswa
+- **Nama**  : Moh. Reiki Hidayatullah  
+- **NIM**   : 230411100153  
+- **Email**   : insanreiki2@gmail.com
+
+## Dosen Pengampu
+- **Nama**  : MULA'AB, S.Si., M.Kom  
+- **NIP**   : 197305202002121001  
+
+---
+
+## Deskripsi
+
+Website ini dibuat untuk mendokumentasikan seluruh proses pembelajaran dan tugas pada mata kuliah **Proyek Sains Data**.  
+Melalui Jupyter Book, semua tahapan akan ditampilkan secara terstruktur mulai dari:  
+
+1. **Business Understanding** – memahami konteks permasalahan dan tujuan analisis.  
+2. **Data Understanding** – eksplorasi awal dataset yang digunakan.  
+3. **Data Preparation** – pembersihan, transformasi, dan persiapan data.  
+4. **Modeling & Evaluation** – membangun serta mengevaluasi model analisis/prediksi.  
+5. **Deployment** – menampilkan hasil akhir dalam bentuk yang mudah dipahami.  
+
+
+---
+
 
 ```{tableofcontents}
 ```
