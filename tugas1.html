@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tugas1 &#8212; My sample book</title>
+    <title>Tugas1 Iris &#8212; My sample book</title>
   
   
   
@@ -181,7 +181,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="crispdm.html">Tahapan CRISP-DM</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas1 Iris</a></li>
+
 
 
 </ul>
@@ -369,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas1</h1>
+    <h1>Tugas1 Iris</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,8 +380,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding-data-iris">Business Understanding – Data Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas1 Iris</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">Business Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang">Latar Belakang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-proyek">Tujuan Proyek</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-yang-diharapkan">Manfaat yang Diharapkan</a></li>
@@ -389,8 +390,8 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding-data-iris">Data Understanding – Data Iris</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gambaran-dataset">Gambaran Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-statistik">Ringkasan Statistik</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insight-awal">Insight Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-statistik-awal">Ringkasan Statistik Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier">Deteksi Outlier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-grafik-id-species">Analisis Grafik ID &amp; Species</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-grafik-petal-length">Analisis Grafik Petal Length</a></li>
@@ -404,6 +405,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-keseluruhan-dataset-iris">Kesimpulan Keseluruhan – Dataset Iris</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a></li>
 </ul>
 
             </nav>
@@ -416,19 +418,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas1">
-<h1>Tugas1<a class="headerlink" href="#tugas1" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas1-iris">
+<h1>Tugas1 Iris<a class="headerlink" href="#tugas1-iris" title="Link to this heading">#</a></h1>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="business-understanding-data-iris">
-<h1>Business Understanding – Data Iris<a class="headerlink" href="#business-understanding-data-iris" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="business-understanding">
+<h1>Business Understanding<a class="headerlink" href="#business-understanding" title="Link to this heading">#</a></h1>
 <section id="latar-belakang">
 <h2>Latar Belakang<a class="headerlink" href="#latar-belakang" title="Link to this heading">#</a></h2>
 <p>Identifikasi spesies bunga <em>Iris</em> secara manual membutuhkan keterampilan botani, sehingga bisa memakan waktu dan berpotensi terjadi kesalahan.<br />
 Dengan memanfaatkan analisis data dan <em>machine learning</em>, identifikasi dapat dilakukan secara otomatis dan konsisten.</p>
 <p>Dataset <em>Iris</em> dalam proyek ini terhubung melalui beberapa sumber:</p>
 <ul class="simple">
-<li><p><strong>CSV lokal</strong></p></li>
-<li><p><strong>phpMyAdmin (MySQL/MariaDB)</strong></p></li>
+<li><p><strong>phpMyAdmin</strong></p></li>
 <li><p><strong>PostgreSQL</strong></p></li>
 </ul>
 </section>
@@ -504,8 +505,8 @@ Dengan memanfaatkan analisis data dan <em>machine learning</em>, identifikasi da
 <li><p>Species adalah target label yang akan diprediksi.</p></li>
 </ul>
 </section>
-<section id="ringkasan-statistik">
-<h2>Ringkasan Statistik<a class="headerlink" href="#ringkasan-statistik" title="Link to this heading">#</a></h2>
+<section id="ringkasan-statistik-awal">
+<h2>Ringkasan Statistik Awal<a class="headerlink" href="#ringkasan-statistik-awal" title="Link to this heading">#</a></h2>
 <p>Analisis awal dilakukan untuk memahami distribusi data, termasuk nilai <strong>minimum, maksimum, dan rata-rata</strong> dari setiap fitur.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -540,14 +541,423 @@ Dengan memanfaatkan analisis data dan <em>machine learning</em>, identifikasi da
 </table>
 </div>
 </section>
-<section id="insight-awal">
-<h2>Insight Awal<a class="headerlink" href="#insight-awal" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Petal Length</strong> dan <strong>Petal Width</strong> paling kuat dalam membedakan spesies <em>Iris</em>.</p></li>
-<li><p><strong>Sepal Length</strong> cukup berguna, tapi ada overlap antara Versicolor dan Virginica.</p></li>
-<li><p><strong>Sepal Width</strong> kurang konsisten, kontribusinya lebih kecil.</p></li>
-</ul>
-<p>Analisis tabel ini membantu memilih fitur yang paling relevan untuk proses <strong>modeling</strong>.</p>
+<section id="deteksi-outlier">
+<h2>Deteksi Outlier<a class="headerlink" href="#deteksi-outlier" title="Link to this heading">#</a></h2>
+<p>Pada bagian ini dilakukan deteksi outlier menggunakan PyCaret Anomaly Detection. Outlier adalah data yang menyimpang dari pola umum, yang dapat memengaruhi hasil analisis jika tidak ditangani</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pycaret<span class="w"> </span>seaborn<span class="w"> </span>matplotlib<span class="w"> </span>scikit-learn<span class="w"> </span>pandas<span class="w"> </span>seaborn
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycaret in /usr/local/python/3.12.1/lib/python3.12/site-packages (3.3.2)
+Requirement already satisfied: seaborn in /home/codespace/.local/lib/python3.12/site-packages (0.13.2)
+Requirement already satisfied: matplotlib in /usr/local/python/3.12.1/lib/python3.12/site-packages (3.7.5)
+Requirement already satisfied: scikit-learn in /usr/local/python/3.12.1/lib/python3.12/site-packages (1.4.2)
+Requirement already satisfied: pandas in /usr/local/python/3.12.1/lib/python3.12/site-packages (2.1.4)
+Requirement already satisfied: ipython&gt;=5.5.0 in /home/codespace/.local/lib/python3.12/site-packages (from pycaret) (9.4.0)
+Requirement already satisfied: ipywidgets&gt;=7.6.5 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (8.1.7)
+Requirement already satisfied: tqdm&gt;=4.62.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (4.67.1)
+Requirement already satisfied: numpy&lt;1.27,&gt;=1.21 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (1.26.4)
+Requirement already satisfied: jinja2&gt;=3 in /home/codespace/.local/lib/python3.12/site-packages (from pycaret) (3.1.6)
+Requirement already satisfied: scipy&lt;=1.11.4,&gt;=1.6.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (1.11.4)
+Requirement already satisfied: joblib&lt;1.4,&gt;=1.2.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (1.3.2)
+Requirement already satisfied: pyod&gt;=1.1.3 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (2.0.5)
+Requirement already satisfied: imbalanced-learn&gt;=0.12.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (0.14.0)
+Requirement already satisfied: category-encoders&gt;=2.4.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (2.7.0)
+Requirement already satisfied: lightgbm&gt;=3.0.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (4.6.0)
+Requirement already satisfied: numba&gt;=0.55.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (0.61.2)
+Requirement already satisfied: requests&gt;=2.27.1 in /home/codespace/.local/lib/python3.12/site-packages (from pycaret) (2.32.4)
+Requirement already satisfied: psutil&gt;=5.9.0 in /home/codespace/.local/lib/python3.12/site-packages (from pycaret) (7.0.0)
+Requirement already satisfied: markupsafe&gt;=2.0.1 in /home/codespace/.local/lib/python3.12/site-packages (from pycaret) (3.0.2)
+Requirement already satisfied: importlib-metadata&gt;=4.12.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (8.7.0)
+Requirement already satisfied: nbformat&gt;=4.2.0 in /home/codespace/.local/lib/python3.12/site-packages (from pycaret) (5.10.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cloudpickle in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (3.1.1)
+Requirement already satisfied: deprecation&gt;=2.1.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (2.1.0)
+Requirement already satisfied: xxhash in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (3.5.0)
+Requirement already satisfied: scikit-plot&gt;=0.3.7 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (0.3.7)
+Requirement already satisfied: yellowbrick&gt;=1.4 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (1.5)
+Requirement already satisfied: plotly&gt;=5.14.0 in /home/codespace/.local/lib/python3.12/site-packages (from pycaret) (6.2.0)
+Requirement already satisfied: kaleido&gt;=0.2.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (1.1.0)
+Requirement already satisfied: schemdraw==0.15 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (0.15)
+Requirement already satisfied: plotly-resampler&gt;=0.8.3.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (0.11.0)
+Requirement already satisfied: statsmodels&gt;=0.12.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (0.14.5)
+Requirement already satisfied: sktime==0.26.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (0.26.0)
+Requirement already satisfied: tbats&gt;=1.1.3 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (1.1.3)
+Requirement already satisfied: pmdarima&gt;=2.0.4 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (2.0.4)
+Requirement already satisfied: wurlitzer in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pycaret) (3.1.1)
+Requirement already satisfied: packaging in /home/codespace/.local/lib/python3.12/site-packages (from sktime==0.26.0-&gt;pycaret) (25.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scikit-base&lt;0.8.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from sktime==0.26.0-&gt;pycaret) (0.7.8)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (1.3.2)
+Requirement already satisfied: cycler&gt;=0.10 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (4.58.5)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: pillow&gt;=6.2.0 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (11.3.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tzdata&gt;=2022.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: patsy&gt;=0.5.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from category-encoders&gt;=2.4.0-&gt;pycaret) (1.0.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.20 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from importlib-metadata&gt;=4.12.0-&gt;pycaret) (3.23.0)
+Requirement already satisfied: decorator in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (5.2.1)
+Requirement already satisfied: ipython-pygments-lexers in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (1.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.19.2)
+Requirement already satisfied: matplotlib-inline in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.1.7)
+Requirement already satisfied: pexpect&gt;4.3 in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (4.9.0)
+Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (3.0.51)
+Requirement already satisfied: pygments&gt;=2.4.0 in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (2.19.2)
+Requirement already satisfied: stack_data in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.6.3)
+Requirement already satisfied: traitlets&gt;=5.13.0 in /home/codespace/.local/lib/python3.12/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (5.14.3)
+Requirement already satisfied: wcwidth in /home/codespace/.local/lib/python3.12/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.2.13)
+Requirement already satisfied: comm&gt;=0.1.3 in /home/codespace/.local/lib/python3.12/site-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (0.2.2)
+Requirement already satisfied: widgetsnbextension~=4.0.14 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (4.0.14)
+Requirement already satisfied: jupyterlab_widgets~=3.0.15 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (3.0.15)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /home/codespace/.local/lib/python3.12/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.8.4)
+Requirement already satisfied: choreographer&gt;=1.0.10 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from kaleido&gt;=0.2.1-&gt;pycaret) (1.0.10)
+Requirement already satisfied: logistro&gt;=1.0.8 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from kaleido&gt;=0.2.1-&gt;pycaret) (1.1.0)
+Requirement already satisfied: orjson&gt;=3.10.15 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from kaleido&gt;=0.2.1-&gt;pycaret) (3.11.3)
+Requirement already satisfied: pytest-timeout&gt;=2.4.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from kaleido&gt;=0.2.1-&gt;pycaret) (2.4.0)
+Requirement already satisfied: simplejson&gt;=3.19.3 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from choreographer&gt;=1.0.10-&gt;kaleido&gt;=0.2.1-&gt;pycaret) (3.20.1)
+Requirement already satisfied: fastjsonschema&gt;=2.15 in /home/codespace/.local/lib/python3.12/site-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (2.21.1)
+Requirement already satisfied: jsonschema&gt;=2.6 in /home/codespace/.local/lib/python3.12/site-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (4.24.0)
+Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /home/codespace/.local/lib/python3.12/site-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (5.8.1)
+Requirement already satisfied: attrs&gt;=22.2.0 in /home/codespace/.local/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (25.3.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /home/codespace/.local/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (2025.4.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in /home/codespace/.local/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (0.36.2)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /home/codespace/.local/lib/python3.12/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (0.26.0)
+Requirement already satisfied: platformdirs&gt;=2.5 in /home/codespace/.local/lib/python3.12/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (4.3.8)
+Requirement already satisfied: llvmlite&lt;0.45,&gt;=0.44.0dev0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from numba&gt;=0.55.0-&gt;pycaret) (0.44.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /home/codespace/.local/lib/python3.12/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.7.0)
+Requirement already satisfied: narwhals&gt;=1.15.1 in /home/codespace/.local/lib/python3.12/site-packages (from plotly&gt;=5.14.0-&gt;pycaret) (1.46.0)
+Requirement already satisfied: dash&gt;=2.11.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (3.2.0)
+Requirement already satisfied: tsdownsample&gt;=0.1.3 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (0.1.4.1)
+Requirement already satisfied: Flask&lt;3.2,&gt;=1.0.4 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (3.1.2)
+Requirement already satisfied: Werkzeug&lt;3.2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (3.1.3)
+Requirement already satisfied: typing-extensions&gt;=4.1.1 in /home/codespace/.local/lib/python3.12/site-packages (from dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (4.14.1)
+Requirement already satisfied: retrying in /usr/local/python/3.12.1/lib/python3.12/site-packages (from dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (1.4.2)
+Requirement already satisfied: nest-asyncio in /home/codespace/.local/lib/python3.12/site-packages (from dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (1.6.0)
+Requirement already satisfied: setuptools in /home/codespace/.local/lib/python3.12/site-packages (from dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (80.9.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: blinker&gt;=1.9.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (1.9.0)
+Requirement already satisfied: click&gt;=8.1.3 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (8.2.1)
+Requirement already satisfied: itsdangerous&gt;=2.2.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from Flask&lt;3.2,&gt;=1.0.4-&gt;dash&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (2.2.0)
+Requirement already satisfied: Cython!=0.29.18,!=0.29.31,&gt;=0.29 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pmdarima&gt;=2.0.4-&gt;pycaret) (3.1.3)
+Requirement already satisfied: urllib3 in /home/codespace/.local/lib/python3.12/site-packages (from pmdarima&gt;=2.0.4-&gt;pycaret) (2.5.0)
+Requirement already satisfied: pytest&gt;=7.0.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pytest-timeout&gt;=2.4.0-&gt;kaleido&gt;=0.2.1-&gt;pycaret) (8.4.2)
+Requirement already satisfied: iniconfig&gt;=1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pytest&gt;=7.0.0-&gt;pytest-timeout&gt;=2.4.0-&gt;kaleido&gt;=0.2.1-&gt;pycaret) (2.1.0)
+Requirement already satisfied: pluggy&lt;2,&gt;=1.5 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pytest&gt;=7.0.0-&gt;pytest-timeout&gt;=2.4.0-&gt;kaleido&gt;=0.2.1-&gt;pycaret) (1.6.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.17.0)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/codespace/.local/lib/python3.12/site-packages (from requests&gt;=2.27.1-&gt;pycaret) (3.4.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/python3.12/site-packages (from requests&gt;=2.27.1-&gt;pycaret) (3.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/codespace/.local/lib/python3.12/site-packages (from requests&gt;=2.27.1-&gt;pycaret) (2025.7.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: executing&gt;=1.2.0 in /home/codespace/.local/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=5.5.0-&gt;pycaret) (2.2.0)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /home/codespace/.local/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=5.5.0-&gt;pycaret) (3.0.0)
+Requirement already satisfied: pure-eval in /home/codespace/.local/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.2.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pycaret.anomaly</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># setup environment</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">setup</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">session_id</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;iforest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pycaret.anomaly</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># setup environment</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">exp</span> <span class="o">=</span> <span class="n">setup</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">session_id</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="mf">3.12.1</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pycaret</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>         <span class="s2">&quot;Pycaret only supports python 3.9, 3.10, 3.11. Your actual Python version: &quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="s2">&quot;Please UPGRADE your Python version.&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="s2">&quot;Pycaret only supports python 3.9, 3.10, 3.11. Your actual Python version: &quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="s2">&quot;Please DOWNGRADE your Python version.&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: (&#39;Pycaret only supports python 3.9, 3.10, 3.11. Your actual Python version: &#39;, sys.version_info(major=3, minor=12, micro=1, releaselevel=&#39;final&#39;, serial=0), &#39;Please DOWNGRADE your Python version.&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Setup dilakukan dengan dataset iris. Session ID digunakan agar hasil bisa direplikasi.
+Isolation Forest dipilih untuk mendeteksi outlier karena efektif pada dataset berukuran kecil hingga sedang.
+Kalau kamu coba abod atau knn, tambahkan alasan singkat kenapa dipakai</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outliers</span> <span class="o">=</span> <span class="n">assign_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">outliers</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Value.Id</th>
+      <th>Value.SepalLengthCm</th>
+      <th>Value.SepalWidthCm</th>
+      <th>Value.df_pg.PetalWidthCm</th>
+      <th>Value.df_pg.PetalLengthCm.1</th>
+      <th>Value.df_pg.Species</th>
+      <th>Value.Anomaly</th>
+      <th>Value.Anomaly_Score</th>
+      <th>Anomaly</th>
+      <th>Anomaly_Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>output</td>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>Iris-setosa</td>
+      <td>0</td>
+      <td>-0.118947</td>
+      <td>0</td>
+      <td>-0.165221</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>output</td>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>Iris-setosa</td>
+      <td>0</td>
+      <td>-0.118430</td>
+      <td>0</td>
+      <td>-0.161698</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>output</td>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>0.2</td>
+      <td>1.3</td>
+      <td>Iris-setosa</td>
+      <td>0</td>
+      <td>-0.103538</td>
+      <td>0</td>
+      <td>-0.156294</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>output</td>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>Iris-setosa</td>
+      <td>0</td>
+      <td>-0.106174</td>
+      <td>0</td>
+      <td>-0.156616</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>output</td>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>Iris-setosa</td>
+      <td>0</td>
+      <td>-0.119344</td>
+      <td>0</td>
+      <td>-0.165952</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Kolom Anomaly = 1 → data outlier</p>
+<p>Kolom Anomaly = 0 → data normal</p>
+<p>Kolom Anomaly_Score → tingkat keanehan data</p>
+<p>Berdasarkan hasil deteksi yang di tampilkan 15 baris, terdapat baris data yang dikategorikan sebagai outlier. Outlier ini dapat disebabkan oleh kesalahan input, kondisi ekstrem, atau karakteristik unik yang jarang terjadi.</p>
+<p>Kolom Anomaly = 1 → data outlier</p>
+<p>Kolom Anomaly = 0 → data normal</p>
+<p>Kolom Anomaly_Score → tingkat keanehan data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">outliers</span><span class="p">,</span> 
+                <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Value.SepalLengthCm&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Value.SepalWidthCm&quot;</span><span class="p">,</span> 
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Value.Anomaly&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;red&quot;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisasi Outlier dengan PyCaret&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+</pre></div>
+</div>
+<img alt="_images/154f6083a06d17790de27e6478e16497c65051f1b5c3d8aa777dbb1170cabe1d.png" src="_images/154f6083a06d17790de27e6478e16497c65051f1b5c3d8aa777dbb1170cabe1d.png" />
+</div>
+</div>
+<p>Gambar di atas merupakan contoh visualisasi dengan titik biru normal dan titik merah outlier</p>
 <p><img alt="image.png" src="data:image/png;base64,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" /></p>
 </section>
 <section id="analisis-grafik-id-species">
@@ -668,6 +1078,9 @@ Pola ini menjelaskan mengapa fitur petal lebih efektif untuk membedakan spesies 
 </ul>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-processing">
+<h1>Pre-processing<a class="headerlink" href="#pre-processing" title="Link to this heading">#</a></h1>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -724,8 +1137,8 @@ Pola ini menjelaskan mengapa fitur petal lebih efektif untuk membedakan spesies 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding-data-iris">Business Understanding – Data Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas1 Iris</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">Business Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang">Latar Belakang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-proyek">Tujuan Proyek</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-yang-diharapkan">Manfaat yang Diharapkan</a></li>
@@ -734,8 +1147,8 @@ Pola ini menjelaskan mengapa fitur petal lebih efektif untuk membedakan spesies 
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding-data-iris">Data Understanding – Data Iris</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gambaran-dataset">Gambaran Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-statistik">Ringkasan Statistik</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insight-awal">Insight Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-statistik-awal">Ringkasan Statistik Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier">Deteksi Outlier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-grafik-id-species">Analisis Grafik ID &amp; Species</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-grafik-petal-length">Analisis Grafik Petal Length</a></li>
@@ -749,6 +1162,7 @@ Pola ini menjelaskan mengapa fitur petal lebih efektif untuk membedakan spesies 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-keseluruhan-dataset-iris">Kesimpulan Keseluruhan – Dataset Iris</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a></li>
 </ul>
 
   </nav></div>
