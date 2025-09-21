@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=27c3cd70" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=04af37c1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -405,7 +405,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-keseluruhan-dataset-iris">Kesimpulan Keseluruhan – Dataset Iris</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iforest">Iforest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-outlier-factor-lof">Local Outlier Factor (LOF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-based-outlier-detection-aod">Angle-Based Outlier Detection (AOD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-tiap-metode">Perbandingan tiap metode</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -587,11 +593,11 @@ Requirement already satisfied: sktime==0.26.0 in /workspaces/PSD/.conda/lib/pyth
 Requirement already satisfied: tbats&gt;=1.1.3 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from pycaret) (1.1.3)
 Requirement already satisfied: pmdarima&gt;=2.0.4 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from pycaret) (2.0.4)
 Requirement already satisfied: wurlitzer in /workspaces/PSD/.conda/lib/python3.11/site-packages (from pycaret) (3.1.1)
-Requirement already satisfied: packaging in /workspaces/PSD/.conda/lib/python3.11/site-packages (from sktime==0.26.0-&gt;pycaret) (25.0)
-Requirement already satisfied: scikit-base&lt;0.8.0 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from sktime==0.26.0-&gt;pycaret) (0.7.8)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: contourpy&gt;=1.0.1 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from matplotlib) (1.3.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging in /workspaces/PSD/.conda/lib/python3.11/site-packages (from sktime==0.26.0-&gt;pycaret) (25.0)
+Requirement already satisfied: scikit-base&lt;0.8.0 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from sktime==0.26.0-&gt;pycaret) (0.7.8)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from matplotlib) (1.3.3)
 Requirement already satisfied: cycler&gt;=0.10 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from matplotlib) (0.12.1)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from matplotlib) (4.59.2)
 Requirement already satisfied: kiwisolver&gt;=1.0.1 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from matplotlib) (1.4.9)
@@ -604,7 +610,9 @@ Requirement already satisfied: tzdata&gt;=2022.1 in /workspaces/PSD/.conda/lib/p
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: patsy&gt;=0.5.1 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from category-encoders&gt;=2.4.0-&gt;pycaret) (1.0.1)
-Requirement already satisfied: zipp&gt;=3.20 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from importlib-metadata&gt;=4.12.0-&gt;pycaret) (3.23.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.20 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from importlib-metadata&gt;=4.12.0-&gt;pycaret) (3.23.0)
 Requirement already satisfied: decorator in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (5.2.1)
 Requirement already satisfied: ipython-pygments-lexers in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (1.1.1)
 Requirement already satisfied: jedi&gt;=0.16 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.19.2)
@@ -615,9 +623,7 @@ Requirement already satisfied: pygments&gt;=2.4.0 in /workspaces/PSD/.conda/lib/
 Requirement already satisfied: stack_data in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.6.3)
 Requirement already satisfied: traitlets&gt;=5.13.0 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (5.14.3)
 Requirement already satisfied: typing_extensions&gt;=4.6 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipython&gt;=5.5.0-&gt;pycaret) (4.15.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wcwidth in /workspaces/PSD/.conda/lib/python3.11/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.2.13)
+Requirement already satisfied: wcwidth in /workspaces/PSD/.conda/lib/python3.11/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.2.13)
 Requirement already satisfied: comm&gt;=0.1.3 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (0.2.3)
 Requirement already satisfied: widgetsnbextension~=4.0.14 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (4.0.14)
 Requirement already satisfied: jupyterlab_widgets~=3.0.15 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (3.0.15)
@@ -635,10 +641,10 @@ Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /works
 Requirement already satisfied: referencing&gt;=0.28.4 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (0.36.2)
 Requirement already satisfied: rpds-py&gt;=0.7.1 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (0.27.1)
 Requirement already satisfied: platformdirs&gt;=2.5 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbformat&gt;=4.2.0-&gt;pycaret) (4.4.0)
-Requirement already satisfied: llvmlite&lt;0.45,&gt;=0.44.0dev0 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from numba&gt;=0.55.0-&gt;pycaret) (0.44.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.7.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: llvmlite&lt;0.45,&gt;=0.44.0dev0 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from numba&gt;=0.55.0-&gt;pycaret) (0.44.0)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=5.5.0-&gt;pycaret) (0.7.0)
 Requirement already satisfied: narwhals&gt;=1.15.1 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from plotly&gt;=5.14.0-&gt;pycaret) (2.5.0)
 Requirement already satisfied: dash&gt;=2.11.0 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (3.2.0)
 Requirement already satisfied: tsdownsample&gt;=0.1.3 in /workspaces/PSD/.conda/lib/python3.11/site-packages (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (0.1.4.1)
@@ -1227,6 +1233,890 @@ Pola ini menjelaskan mengapa fitur petal lebih efektif untuk membedakan spesies 
 <li><p>Transformasi data (log, z-score scaling, winsorizing) → kalau outlier tetap dianggap penting.</p></li>
 <li><p>Menyimpan outlier sebagai informasi → jika outlier punya arti khusus (contohnya kasus fraud detection).</p></li>
 </ol>
+<p>Berikut contoh penghapusan outlier</p>
+<section id="iforest">
+<h2>Iforest<a class="headerlink" href="#iforest" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iforest</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;iforest&#39;</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">iforest_pred</span> <span class="o">=</span> <span class="n">predict_model</span><span class="p">(</span><span class="n">iforest</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Buang outlier (Anomaly == 0)</span>
+<span class="n">df_iforest_clean</span> <span class="o">=</span> <span class="n">iforest_pred</span><span class="p">[</span><span class="n">iforest_pred</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">,</span><span class="s1">&#39;Anomaly_Score&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data setelah dibersihkan menggunakan IForest:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_iforest_clean</span><span class="p">))</span>
+
+<span class="c1"># Simpan</span>
+<span class="c1"># df_iforest_clean.to_csv(&quot;iris_iforest_clean.csv&quot;, index=False)</span>
+<span class="n">df_iforest_clean</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"></div><div class="output text_html"></div><div class="output text_html"></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data setelah dibersihkan menggunakan IForest: 142
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name_output</th>
+      <th>Value.Id</th>
+      <th>Value.SepalLengthCm</th>
+      <th>Value.SepalWidthCm</th>
+      <th>Value.df_pg.PetalWidthCm</th>
+      <th>Value.df_pg.PetalLengthCm.1</th>
+      <th>Value.df_pg.Species_Iris-setosa</th>
+      <th>Value.df_pg.Species_Iris-versicolor</th>
+      <th>Value.df_pg.Species_Iris-virginica</th>
+      <th>Value.Anomaly</th>
+      <th>Value.Anomaly_Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.118947</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.118430</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>0.2</td>
+      <td>1.3</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.103538</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.106174</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.119344</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>0.4</td>
+      <td>1.7</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.048501</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>7.0</td>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>0.3</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.087350</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.141304</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.066135</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>0.1</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.085224</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.0</td>
+      <td>11.0</td>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.114602</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>0.2</td>
+      <td>1.6</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.131328</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.0</td>
+      <td>13.0</td>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>0.1</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.084942</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>5.8</td>
+      <td>4.0</td>
+      <td>0.2</td>
+      <td>1.2</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.036942</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1.0</td>
+      <td>16.0</td>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>0.4</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.018057</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="local-outlier-factor-lof">
+<h2>Local Outlier Factor (LOF)<a class="headerlink" href="#local-outlier-factor-lof" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lof</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;lof&#39;</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">lof_pred</span> <span class="o">=</span> <span class="n">predict_model</span><span class="p">(</span><span class="n">lof</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">df_lof_clean</span> <span class="o">=</span> <span class="n">lof_pred</span><span class="p">[</span><span class="n">lof_pred</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">,</span><span class="s1">&#39;Anomaly_Score&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data setelah dibersihkan menggunakan metode LOF:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_lof_clean</span><span class="p">))</span>
+
+<span class="c1"># df_lof_clean.to_csv(&quot;iris_lof_clean.csv&quot;, index=False)</span>
+<span class="n">df_lof_clean</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"></div><div class="output text_html"></div><div class="output text_html"></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data setelah dibersihkan menggunakan metode LOF: 144
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name_output</th>
+      <th>Value.Id</th>
+      <th>Value.SepalLengthCm</th>
+      <th>Value.SepalWidthCm</th>
+      <th>Value.df_pg.PetalWidthCm</th>
+      <th>Value.df_pg.PetalLengthCm.1</th>
+      <th>Value.df_pg.Species_Iris-setosa</th>
+      <th>Value.df_pg.Species_Iris-versicolor</th>
+      <th>Value.df_pg.Species_Iris-virginica</th>
+      <th>Value.Anomaly</th>
+      <th>Value.Anomaly_Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.106174</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.119344</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>0.4</td>
+      <td>1.7</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.048501</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>7.0</td>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>0.3</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.087350</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.141304</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.066135</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>0.1</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.085224</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.0</td>
+      <td>11.0</td>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.114602</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>0.2</td>
+      <td>1.6</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.131328</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.0</td>
+      <td>13.0</td>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>0.1</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.084942</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1.0</td>
+      <td>14.0</td>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>0.1</td>
+      <td>1.1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.010802</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>5.8</td>
+      <td>4.0</td>
+      <td>0.2</td>
+      <td>1.2</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.036942</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1.0</td>
+      <td>16.0</td>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>0.4</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.018057</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1.0</td>
+      <td>17.0</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>0.4</td>
+      <td>1.3</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.077812</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1.0</td>
+      <td>18.0</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>0.3</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.146953</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="angle-based-outlier-detection-aod">
+<h2>Angle-Based Outlier Detection (AOD)<a class="headerlink" href="#angle-based-outlier-detection-aod" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abod</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;abod&#39;</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">abod_pred</span> <span class="o">=</span> <span class="n">predict_model</span><span class="p">(</span><span class="n">abod</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">df_abod_clean</span> <span class="o">=</span> <span class="n">abod_pred</span><span class="p">[</span><span class="n">abod_pred</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">,</span><span class="s1">&#39;Anomaly_Score&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data setelah dibersihkan menggunakan metode ABOD:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_abod_clean</span><span class="p">))</span>
+
+<span class="c1"># df_abod_clean.to_csv(&quot;iris_abod_clean.csv&quot;, index=False)</span>
+<span class="n">df_abod_clean</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"></div><div class="output text_html"></div><div class="output text_html"></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data setelah dibersihkan menggunakan metode ABOD: 150
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name_output</th>
+      <th>Value.Id</th>
+      <th>Value.SepalLengthCm</th>
+      <th>Value.SepalWidthCm</th>
+      <th>Value.df_pg.PetalWidthCm</th>
+      <th>Value.df_pg.PetalLengthCm.1</th>
+      <th>Value.df_pg.Species_Iris-setosa</th>
+      <th>Value.df_pg.Species_Iris-versicolor</th>
+      <th>Value.df_pg.Species_Iris-virginica</th>
+      <th>Value.Anomaly</th>
+      <th>Value.Anomaly_Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.118947</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.118430</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>0.2</td>
+      <td>1.3</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.103538</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.106174</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.119344</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>0.4</td>
+      <td>1.7</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.048501</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>7.0</td>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>0.3</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.087350</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.141304</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>0.2</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.066135</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>0.1</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.085224</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.0</td>
+      <td>11.0</td>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>0.2</td>
+      <td>1.5</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.114602</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>12.0</td>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>0.2</td>
+      <td>1.6</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.131328</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.0</td>
+      <td>13.0</td>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>0.1</td>
+      <td>1.4</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.084942</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1.0</td>
+      <td>14.0</td>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>0.1</td>
+      <td>1.1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.010802</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.0</td>
+      <td>15.0</td>
+      <td>5.8</td>
+      <td>4.0</td>
+      <td>0.2</td>
+      <td>1.2</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.036942</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="perbandingan-tiap-metode">
+<h2>Perbandingan tiap metode<a class="headerlink" href="#perbandingan-tiap-metode" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Metode&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;IForest&quot;</span><span class="p">,</span> <span class="s2">&quot;LOF&quot;</span><span class="p">,</span> <span class="s2">&quot;ABOD&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Jumlah Data Bersih&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df_iforest_clean</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_lof_clean</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_abod_clean</span><span class="p">)]</span>
+<span class="p">})</span>
+<span class="n">summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metode</th>
+      <th>Jumlah Data Bersih</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>IForest</td>
+      <td>142</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LOF</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ABOD</td>
+      <td>150</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Perbandingan</p>
+<ol class="arabic simple">
+<li><p>Isolation Forest (IForest)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Metode ini berbasis random partitioning → semakin “terisolasi” suatu titik, makin besar kemungkinan jadi outlier.</p></li>
+<li><p>Dari 150 data, terdeteksi 8 outlier → sisa 142.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Local Outlier Factor (LOF)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Membandingkan kepadatan lokal tiap titik dengan tetangganya.</p></li>
+<li><p>Kalau ada titik yang jauh lebih jarang dibanding tetangga, dia dianggap outlier.</p></li>
+<li><p>Dapat 6 outlier → sisa 144.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Angle-Based Outlier Detection (ABOD)</p></li>
+</ol>
+<ul class="simple">
+<li><p>Berdasarkan distribusi sudut antara vektor ke titik lain.</p></li>
+<li><p>Cocok untuk data berdimensi tinggi, tapi kalau data relatif kecil &amp; cukup rapat (seperti iris), sering kali tidak mendeteksi apa pun.</p></li>
+<li><p>Hasilnya 0 outlier → tetap 150.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1309,7 +2199,13 @@ Pola ini menjelaskan mengapa fitur petal lebih efektif untuk membedakan spesies 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-keseluruhan-dataset-iris">Kesimpulan Keseluruhan – Dataset Iris</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iforest">Iforest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-outlier-factor-lof">Local Outlier Factor (LOF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-based-outlier-detection-aod">Angle-Based Outlier Detection (AOD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-tiap-metode">Perbandingan tiap metode</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
