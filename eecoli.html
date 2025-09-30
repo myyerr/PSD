@@ -1591,17 +1591,10 @@ Confusion Matrix:
 <span class="n">y_labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;localization_class&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">y_labels</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">values</span>
 
-<span class="c1"># ==============================================================================</span>
-<span class="c1"># LANGKAH 1: Lakukan split data ASLI terlebih dahulu.</span>
-<span class="c1"># Data test ini akan digunakan untuk mengevaluasi SEMUA model.</span>
-<span class="c1"># ==============================================================================</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>
 <span class="p">)</span>
 
-<span class="c1"># ==============================================================================</span>
-<span class="c1"># LANGKAH 2: Lakukan oversampling HANYA pada data training.</span>
-<span class="c1"># ==============================================================================</span>
 
 <span class="c1"># SMOTE pada data training</span>
 <span class="n">smote</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">k_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -1618,10 +1611,6 @@ Confusion Matrix:
         <span class="n">X_train_ad</span><span class="p">,</span> <span class="n">y_train_ad</span> <span class="o">=</span> <span class="n">adasyn</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train_ad</span><span class="p">,</span> <span class="n">y_train_ad</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="k">break</span>
-
-<span class="c1"># ==============================================================================</span>
-<span class="c1"># LANGKAH 3: Evaluasi semua model pada data test ASLI yang sama.</span>
-<span class="c1"># ==============================================================================</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -1663,7 +1652,7 @@ Confusion Matrix:
 <span class="c1"># Tampilkan hasil dalam bentuk tabel pivot</span>
 <span class="n">df_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 <span class="n">df_results_pivot</span> <span class="o">=</span> <span class="n">df_results</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Dataset&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">,</span> <span class="s2">&quot;Macro F1&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Perbandingan Setelah Perbaikan Metodologi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Perbandingan :&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df_results_pivot</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1741,7 +1730,7 @@ C:\Users\user\AppData\Roaming\Python\Python311\site-packages\sklearn\naive_bayes
   jointi = np.log(self.class_prior_[i])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil Perbandingan Setelah Perbaikan Metodologi:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil Perbandingan :
 </pre></div>
 </div>
 <div class="output text_html"><div>
