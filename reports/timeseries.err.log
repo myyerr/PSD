@@ -31,8 +31,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import openeo', 'from shapely.geometry import shape', '', '# Koneksi & autentikasi ke Copernicus Data Space Ecosystem', 'connection = openeo.connect("openeo.dataspace.copernicus.eu").authenticate_oidc()']
+['import openeo', 'from shapely.geometry import shape', 'import pandas as pd', 'import matplotlib.pyplot as plt', 'import os']
 ...
-['    title="NO2 Bangkalan Sep-Okt 2025",', '    outputfile="no2_bangkalan.nc"', ')', '', 'print("Job telah di submit. File output akan tersimpan sebagai \'no2_bangkalan.nc\'")']
+['df["date"] = pd.to_datetime(df["date"])', '', 'df["month"] = df["date"].dt.to_period("M")', '', 'df_monthly = df.groupby("month", as_index=False)["NO2"].mean()']
 -------------------
 
